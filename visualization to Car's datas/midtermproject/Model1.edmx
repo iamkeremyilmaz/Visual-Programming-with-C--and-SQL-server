@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VISUAL PROGRAMMING.dbo.Accessory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Accessory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccessoryCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Accessory" Type="nvarchar" MaxLength="50" />
+          <Property Name="AccessoryMaterial" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShippingTime" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VISUAL PROGRAMMING.dbo.Branches' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Branches">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BranchNo" Type="int" />
+          <Property Name="BranchLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="BranchServices" Type="nvarchar" MaxLength="50" />
+          <Property Name="BranchCost" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VISUAL PROGRAMMING.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tcno" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" />
+          <Property Name="Task" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitHourCost" Type="int" />
+          <Property Name="MonthlyCost" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VISUAL PROGRAMMING.dbo.Models' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Models">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChassisNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" />
+          <Property Name="Price" Type="nvarchar" MaxLength="50" />
+          <Property Name="Features" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'VISUAL PROGRAMMING.dbo.USERS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nchar" MaxLength="10" />
+          <Property Name="Password" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Accessory" EntityType="Self.Accessory" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Accessory].[id] AS [id], 
+    [Accessory].[AccessoryCode] AS [AccessoryCode], 
+    [Accessory].[Accessory] AS [Accessory], 
+    [Accessory].[AccessoryMaterial] AS [AccessoryMaterial], 
+    [Accessory].[Price] AS [Price], 
+    [Accessory].[ShippingTime] AS [ShippingTime]
+    FROM [dbo].[Accessory] AS [Accessory]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Branches" EntityType="Self.Branches" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Branches].[id] AS [id], 
+    [Branches].[BranchNo] AS [BranchNo], 
+    [Branches].[BranchLocation] AS [BranchLocation], 
+    [Branches].[BranchServices] AS [BranchServices], 
+    [Branches].[BranchCost] AS [BranchCost]
+    FROM [dbo].[Branches] AS [Branches]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employee].[id] AS [id], 
+    [Employee].[tcno] AS [tcno], 
+    [Employee].[Name] AS [Name], 
+    [Employee].[Surname] AS [Surname], 
+    [Employee].[Task] AS [Task], 
+    [Employee].[UnitHourCost] AS [UnitHourCost], 
+    [Employee].[MonthlyCost] AS [MonthlyCost]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Models" EntityType="Self.Models" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Models].[id] AS [id], 
+    [Models].[ChassisNumber] AS [ChassisNumber], 
+    [Models].[Model] AS [Model], 
+    [Models].[Price] AS [Price], 
+    [Models].[Features] AS [Features]
+    FROM [dbo].[Models] AS [Models]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="USERS" EntityType="Self.USERS" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [USERS].[id] AS [id], 
+    [USERS].[Username] AS [Username], 
+    [USERS].[Password] AS [Password]
+    FROM [dbo].[USERS] AS [USERS]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Accessory">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccessoryCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Accessory1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AccessoryMaterial" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingTime" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Branches">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BranchNo" Type="Int32" />
+          <Property Name="BranchLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BranchServices" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BranchCost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tcno" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Task" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UnitHourCost" Type="Int32" />
+          <Property Name="MonthlyCost" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Models">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChassisNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Features" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="USERS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="branchesEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Accessory" EntityType="Self.Accessory" />
+          <EntitySet Name="Branches" EntityType="Self.Branches" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" />
+          <EntitySet Name="Models" EntityType="Self.Models" />
+          <EntitySet Name="USERS" EntityType="Self.USERS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="branchesEntities1">
+          <EntitySetMapping Name="Accessory">
+            <EntityTypeMapping TypeName="Model.Accessory">
+              <MappingFragment StoreEntitySet="Accessory">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="AccessoryCode" ColumnName="AccessoryCode" />
+                <ScalarProperty Name="Accessory1" ColumnName="Accessory" />
+                <ScalarProperty Name="AccessoryMaterial" ColumnName="AccessoryMaterial" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ShippingTime" ColumnName="ShippingTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="Model.Branches">
+              <MappingFragment StoreEntitySet="Branches">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="BranchNo" ColumnName="BranchNo" />
+                <ScalarProperty Name="BranchLocation" ColumnName="BranchLocation" />
+                <ScalarProperty Name="BranchServices" ColumnName="BranchServices" />
+                <ScalarProperty Name="BranchCost" ColumnName="BranchCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tcno" ColumnName="tcno" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Task" ColumnName="Task" />
+                <ScalarProperty Name="UnitHourCost" ColumnName="UnitHourCost" />
+                <ScalarProperty Name="MonthlyCost" ColumnName="MonthlyCost" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Models">
+            <EntityTypeMapping TypeName="Model.Models">
+              <MappingFragment StoreEntitySet="Models">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ChassisNumber" ColumnName="ChassisNumber" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="Features" ColumnName="Features" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USERS">
+            <EntityTypeMapping TypeName="Model.USERS">
+              <MappingFragment StoreEntitySet="USERS">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
